@@ -17,9 +17,8 @@ const myArr=[1,2,3,4,5,6]
  //console.log(myArr.includes(3));
 //  console.log(myArr.indexOf(1));
 
-
- console.log(myArr)
- console.log(myArr.slice(1,4))
 console.log(myArr)
-//console.log(myArr.splice(1,3))
+ //console.log(myArr.slice(1,4))
 //console.log(myArr)
+console.log(myArr.splice(1,4))
+console.log(myArr)
