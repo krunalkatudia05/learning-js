@@ -88,4 +88,100 @@ const MyUser=
 // console.log(MyUser.greetings());
 // console.log(typeof MyUser.greetings());
 
+// const obj1={}
+// obj1.id=1;
+// obj1.email="TEST@yopmail.com";
+// obj1.isLoggedIn=false;
+
+
+const regular_user={
+    email:"test@yopmail.com",
+    fullname:{
+        userfullname:{
+            "firstname":"david",
+            "lastname":"shah"
+        }
+    }
+}
+
+//console.log(regular_user)
+
+
+//accessing object data of an multiple nested objects in js
+// ? here checks whether the data inside the fullname is null or not. 
+//In order to prevent error we check object that is null or not using ? mark
+//console.log(regular_user.fullname?.userfullname.firstname)
+
+
+const obj1={1:"a",2:"b"}
+const obj2={3:"a",4:"b"}
+const obj3={5:"a",6:"b"}
+
+//merging 2 or more object method 1
+//const obj4={obj1,obj2};
+//console.log(obj4)
+// Output : { obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } }
+
+
+//merging 2 or more object method 2
+// {} represent the target object in which all the mentioned object will be merged.
+//  const new_array=Object.assign({},obj1,obj2,obj3);
+//  console.log(new_array)
+// Output : { '1': 'a', '2': 'b', '3': 'a', '4': 'b', '5': 'a', '6': 'b' }
+
+//merging 2 or more objects method 3
+//const new_array={...obj1,...obj2,...obj3}
+ //console.log(new_array)
+ // Output : { '1': 'a', '2': 'b', '3': 'a', '4': 'b', '5': 'a', '6': 'b' }
+
+
+ //real case scenario of returning data from api 
+
+ const users=[
+    {
+        id:1,
+        üsername:"TEST@YOPMAIL.COM",
+        IsLoggedIn:false
+    },
+    {
+        id:2,
+        üsername:"TEST1@YOPMAIL.COM",
+        IsLoggedIn:true
+    },
+    {
+        id:3,
+        üsername:"TEST2@YOPMAIL.COM",
+        IsLoggedIn:true
+    }
+ ]
+
+
+ //reading data from the array object.
+//  console.log(users[0].üsername);
+//  console.log(users[1].üsername);
+
+
+ //get the list of all the key's of the object
+ //Note : check the console generated when we try to get the list of the key's of an array of object it retures ["0","1","2"] 
+ //instead of the actual key's name of the object
+//  console.log(Object.keys(users))
+//  console.log(Object.keys(obj1))
+
+
+ //get the list of all the values's of the object
+ //Note : check the console generated when we try to get the list of the values's of an array of object it retures entire array as it is
+ //instead of the actual values's of the object
+  console.log(Object.values(users))
+//  console.log(Object.values(obj1))
+
+
+//Object returns each key pair as an seprate array inside an array.
+ //console.log(Object.entries(obj1))
+
+
+ //check whether the property exists or not inside an object. Returns true or false.
+ //console.log(regular_user.hasOwnProperty("email"));
+ //check whether the property exists or not inside an array of object. Returns true or false.
+ //console.log(users[0].hasOwnProperty("üsername"));
+ 
 //End
