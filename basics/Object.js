@@ -24,18 +24,18 @@
 //Creating object using Literals
 //Start
 
-const mySym=Symbol("key1");
+// const mySym=Symbol("key1");
 
-const MyUser=
-{
-    name:"David",
-    [mySym]:"key1",
-    "place":"Mumbai",
-    "full name":"David Shah",
-    Age:28,
-    Email:"david.shah@yopmail.com",
-    mobile_no:"83838383" 
-}
+// const MyUser=
+// {
+//     name:"David",
+//     [mySym]:"key1",
+//     "place":"Mumbai",
+//     "full name":"David Shah",
+//     Age:28,
+//     Email:"david.shah@yopmail.com",
+//     mobile_no:"83838383" 
+// }
 
 //console.log(MyUser.place);
 //console.log(MyUser);
@@ -94,15 +94,15 @@ const MyUser=
 // obj1.isLoggedIn=false;
 
 
-const regular_user={
-    email:"test@yopmail.com",
-    fullname:{
-        userfullname:{
-            "firstname":"david",
-            "lastname":"shah"
-        }
-    }
-}
+// const regular_user={
+//     email:"test@yopmail.com",
+//     fullname:{
+//         userfullname:{
+//             "firstname":"david",
+//             "lastname":"shah"
+//         }
+//     }
+// }
 
 //console.log(regular_user)
 
@@ -184,4 +184,23 @@ const obj3={5:"a",6:"b"}
  //check whether the property exists or not inside an array of object. Returns true or false.
  //console.log(users[0].hasOwnProperty("üsername"));
  
+
+ //destructing in javascript
+
+ const objUser={
+    username:"test@yopmail.com",
+    fullname : "David Shah",
+    Age : 28,
+    Department : "Manager"
+ }
+
+//syntaxt of destructring is as follows.
+//{} means we are trying to destructure it.
+//username is the key name of the object and email is the custom name provided by us.
+//destruturing is used because instead of writing Object.PropertyName everytime. 
+//In one go we destructure the object and use accordingly
+ const {username : email} = objUser
+
+ console.log(email);
+
 //End
