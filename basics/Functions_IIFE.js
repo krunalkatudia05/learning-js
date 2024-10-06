@@ -67,3 +67,18 @@
 // )(); // () writing this is main part because without brackets the function will not execute. 
 
 //By Converting Normal function into IIFE function we can save the function object being created. Hence IIFE prevents pollution of Global JS Scope.
+
+
+//passing parameters into IIFE Functions
+// (
+//         function chai(name)
+//         {
+//             console.log(`Hi ${name} from IIFE Named Function with Parameters`)
+//         }
+// )('David Shah'); 
+
+// ( (name) =>
+//     {
+//         console.log(`Hi ${name} from IIFE UnNamed Function with Parameters`)
+//     }
+// )('David Shah'); 
