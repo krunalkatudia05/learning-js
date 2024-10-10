@@ -73,6 +73,10 @@ The correct way to use map is to perform an operation to each element of the arr
 
 check "//2" when we want to filter the data we are using filter method. and using condition we can filter the data.
 filter return new array less or equal the size of original array
+
+we can use multiple map() or multiple filter() or map and filter together than the result of the first map or filter
+will be passed on to next map() or filter().
+
 */
 
 //const _storemapval = ArrayVal.map( (val) => { return val > 3 });                        //1
@@ -95,19 +99,29 @@ filter return new array less or equal the size of original array
 //console.log(mapval1);
  
 
-const books = [
-    { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
-    { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
-    { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
-    { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
-    { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
-    { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
-    { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
-    { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
-    { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
-  ];
+//Using Map() and Filter() together 
+
+//const ArrayVal=[1,2,3,4,5,6]
+// const _storemapval1 = ArrayVal.map( (val) => { return val * 3 }).filter((item)=>{return item > 10});
+// console.log(_storemapval1); 
+//OutPut : [ 12, 15, 18 ]
 
 
-  
+// const books = [
+//     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+//     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+//     { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+//     { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+//     { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+//     { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+//     { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+//     { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+//     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+//   ];
+
+
+
+
+
 
 
