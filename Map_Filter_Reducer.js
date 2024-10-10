@@ -120,6 +120,37 @@ will be passed on to next map() or filter().
 //   ];
 
 
+//----------------- Reduce in Array in JS ---------------------------------------
+
+/*
+    Reduce method iterates over an array performing an operation to each of the elements of array
+    accumulating a single output value.
+
+    Reduce method takes an intial value and process elements from left to right, reducing the array into
+    a single result.
+
+    In the below example. "acc" is the accumulator , "val" is the current value of the array iteration and 0 is the intial value.
+    It is not compulsory to give Initial Value
+    reduce function can be used to add, remove shopping cart total.
+
+    In reduce we need to pass UnNamed function in JS.
+*/
+
+
+const arr=[1,2,3,4,5]
+const InitialValue = 0;
+// Method 1 of working with Reduce.
+// const Store_arr=arr.reduce((acc,val)=>{ return acc + val },InitialValue);
+// console.log(Store_arr);
+
+// Method 2 of working with Reduce.
+// function TypeName(acc,val)
+// {
+//     return acc + val ;
+// }
+// const Store_arr1=arr.reduce(TypeName,InitialValue);
+// console.log(Store_arr1);
+
 
 
 
