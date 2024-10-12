@@ -15,15 +15,33 @@
 <body id="parentDiv" class="bg-color">
     <h1 id="title"> here is the test dat</h1>
     <h2>this is test again</h2>
+
+    <div id="InsertH1"></div>
     <!-- <input type="text" id="txt_firstName"> -->
 </body>
 <script>
-    const parent = document.querySelector('#parentDiv')
+    //const parent = document.querySelector('#parentDiv')
     // parent.inn
-    console.log(parent);    
+    //console.log(parent);    
 
    // const 
-    
+
+   const InsertDivElement = document.querySelector('#InsertH1');
+
+   // creating an appending an new h1 tag
+  const H1Elem = document.createElement('h1');
+  H1Elem.innerHTML="This is from Custom Text";      
+  InsertDivElement.appendChild(H1Elem);  
+
+  //replacing the existing h1 from an new h1
+  const EditElem = document.createElement('h1');
+  EditElem.innerHTML="Replaced";
+  InsertDivElement.replaceWith(EditElem)
+
+  //here "h1:nth-child(1)" slecting 1st h1 tag. (1) represents which indexeth of element needs to remove.
+  const RemoveElem = document.querySelector('h1:nth-child(1)')
+//   RemoveElem.remove()
+
     
 </script>
 </html>
