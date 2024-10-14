@@ -1,0 +1,69 @@
+<!--
+ Events in js are used to perform any operation on any action performed by user on browser.
+Ex : onclick, MouseOver, MouseIn, FocusIn , etc.
+Javascript is runs sequentially. Exception is when we write code in async then the sequentially code is not run but Events
+are not run sequentially. It runs based on any action performed by user or at any browser event. 
+
+ document.getElementById('Parent').onclick = function(e) {}
+ v/s
+ document.getElementById('Parent').addEventListener('click',functi(e) => { },false)
+
+ here if you use addEventListener we can have controll over propogation. 
+ Q.) What is propogation ?
+ Ans.) Propogation is controlling the bubling event and event caputuring event. By default propogation value is set to false.
+ Considering "ul li" example written below when we clicked on  "Child" id of li element then first "Child" click event will
+ trigger and then "Parent" click event also will get trigger. This is known as Event Bubbling.
+
+Similarly if we sent the Event Propogation value to true then "Event caputuring" will happen where first "Parent" click event will
+get triggered and then "Child" click event will get triggered.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="Parent" style="background-color: antiquewhite;">
+        <li>List no 1</li>
+        <li id="Child">List no 2</li>
+        <li>List no 3</li>
+        <li>List no 4</li>
+    </ul>
+</body>
+<script>
+    
+
+    // document.getElementById('Parent').onclick = function(e)
+    // {
+    //     //console.log(e);
+    //     alert('Hi this is Parent')   
+    // }
+
+    // document.getElementById('Child').onclick = function(e)
+    // {
+    //     //console.log(e);
+    //     alert('Hi this is Child')   
+    //     e.stopPropagation();
+    // }
+
+    // document.getElementById('Parent').addEventListener('click',function(e) {
+    //     //console.log(e);
+    //     //alert('Hi this is from click event.')
+    // },false) // here false denotes Event Propogation (Event Bubling & Event Capture.)
+
+    document.getElementById('Child').addEventListener('click' , function(e) {                
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'LI')
+        {
+            e.target.remove();            
+        }
+        //alert('Hi this is from click event.')
+    },false) // here false denotes Event Propogation (Event Bubling & Event Capture.)
+
+    
+</script>
+</html>
