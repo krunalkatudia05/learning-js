@@ -6,6 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hi from div</h1>
+    <div>
+        <input type="button" id="start_Timer" value="Start Timer">
+        <input type="button" id="stop_Timer" value="Stop Timer">
+    </div>
 </body>
+<script>
+
+    let interval;
+    let randomColor;
+    // const colors = [];
+    const ColorCode = function()
+    {
+        for (let i = 0; i < 10; i++) {
+        randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);        
+        }        
+        return randomColor;
+    }
+//  ColorCode();
+
+    const changecolor= function(colorname){        
+    const bodyformat = document.querySelector('body');
+    bodyformat.style.backgroundColor = colorname;
+}
+
+
+
+document.querySelector('#start_Timer').addEventListener('click' ,function()
+{
+    interval = setInterval(() => {
+            randomColor = ColorCode();
+            changecolor(randomColor);
+        }, 1000);
+});
+
+document.querySelector('#stop_Timer').addEventListener('click' ,function(){
+clearInterval(interval);
+});
+
+// setTimeout(changecolor,2000);
+</script>
 </html>
