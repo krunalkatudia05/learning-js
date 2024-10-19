@@ -65,15 +65,15 @@
 
 // ------------------------- Async Await with promise -------------------------------------
 
-const PromiseTwo = new Promise(function(resolve,reject){
-    setTimeout(() => {
-        const flag = false; // here when we set value to false promise will execute reject which means it's an error.
-        if(flag)
-            resolve('THis is from Resolve with async')
-        else
-            reject('THis is from reject with async')        
-    }, 2000);
-})
+// const PromiseTwo = new Promise(function(resolve,reject){
+//     setTimeout(() => {
+//         const flag = false; // here when we set value to false promise will execute reject which means it's an error.
+//         if(flag)
+//             resolve('THis is from Resolve with async')
+//         else
+//             reject('THis is from reject with async')        
+//     }, 2000);
+// })
 // here when we set the value of the "flag" to "false" promise will throw error and the below function will not be handle the error
 // because async await function cannot directly handle the error.
 //scenario 1 where we are not handling error by try catch block
@@ -97,3 +97,32 @@ const PromiseTwo = new Promise(function(resolve,reject){
 // }
 // fn_Error();
 
+
+
+
+// -------------- Async Await with Fetch ----------------------------------
+
+// "fetch" in javascript returns an promise.
+
+const apiurl='https://api.github.com/users/krunalkatudia05';
+
+async function GetUserData()
+{
+    const response = await fetch(apiurl);    
+     //console.log(response);
+
+     // here we remove "await" from "response.json()" then we will not get any data because the promise is not yet complete.
+     // here the promise is converting response to json hence without "await" keyword we will not get data.
+     const data = response.json();      
+     console.log(data);
+}
+
+//GetUserData();
+
+// here without async await we achieved the functionality which we achieved in above example.
+fetch(apiurl).then((response)=>{
+    console.log(response)
+    return response.json()
+}).then((response) => {
+console.log("login id : "+ response.login)
+}).catch((response) => console.log(response))
