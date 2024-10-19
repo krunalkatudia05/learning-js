@@ -126,3 +126,31 @@ fetch(apiurl).then((response)=>{
 }).then((response) => {
 console.log("login id : "+ response.login)
 }).catch((response) => console.log(response))
+
+
+
+// ----------------- Fetch in Javascript ------------------------------------
+
+
+// fetch is an global fetch method that starts the process of fetching a resources from the network
+// It returns the process which is fulfilled when the response is available.
+
+// where the request returns 404 while using fetch it will be execute resolve method &
+// not reject method because 404 is an response and it is not an error. Reject will execute
+// in case when fetch will unable to make the request.
+
+// Javascript Execution context creates an special queue which is called as high priority queue
+// or fetch queue which will be executed first. hence fetch request are executed first.
+
+// fetch internal mechanism divides into 2 parts. 1.) memory allocation and 2.) Making request.
+
+// 1.) Memory allocation will allocated memory let say data the stored memory is not exactly
+//called data. Also there are 2 array's onFulfilled and onRejection these methods are nothing but
+// resolve in case of OnFulFilled and Reject in case of OnRejection. OnFulFilled and OnRejection
+// are responsible for storing data into Memory which is allocated
+// for fetch request (memory name "Data" in our case.) 
+
+//2.)  making request to url are depending whether the request is made to url then resolve is
+// executed otherwise reject is executed.
+
+// we cannot access OnFulFilled & onRejection directly.
