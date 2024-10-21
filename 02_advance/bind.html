@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React APP</title>
+</head>
+<body>
+    <button>CLick Here</button>    
+</body>
+<script>
+    class React{
+        constructor()
+        {
+            this.AppName = 'react'
+            this.URL = 'https://devomn.paymateb2b.com/PayMateWeb'
+        
+            console.log('context created');
+            //here we are able to access "this.URL" because whil creating instance we are able
+            // to access the data of this. but once the instance of the class is created the
+            // data of this is lost so we have to use bind(this) keyword.
+            console.log(this.URL);
+
+            // here check ||1|| in this example when the instance of react class will be created
+            //  click event will also get triggered and without bind the references of the
+            //  this keyword will be lost the data because we are triggering the click event
+            // after the instance of the class is being created so in order to
+            // preserve bind the data we have to use bind(this) keyword as used in ||2||            
+            // document.querySelector('button').addEventListener('click'
+            // ,this.HandleClick)    ////   ||1||
+           
+            document.querySelector('button').addEventListener('click'
+            ,this.HandleClick.bind(this))  //// ||2||
+        }
+
+        HandleClick()
+        {
+            console.log('now the click event is triggered.')
+            console.log(this.URL)
+        }
+    }
+
+    const obj=new React();
+</script>
+</html>
