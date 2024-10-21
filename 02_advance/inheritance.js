@@ -1,30 +1,33 @@
 class User {
     constructor(username){
-        this.username = username
+        this.username=username;        
     }
 
-    logMe(){
-        console.log(`USERNAME is ${this.username}`);
+    LogMe()
+    {
+        return `UserName is ${this.username}`
     }
 }
 
-class Teacher extends User{
-    constructor(username, email, password){
+class Student extends User{
+    constructor(username,standard,rollno)
+    {
+        // super keyword behind the scene will get the value of the parent(User) class username
+        // and will bind username of Parent(User) class to Child(Student) Class.
         super(username)
-        this.email = email
-        this.password = password
+        this.standard=standard
+        this.rollno = rollno
     }
 
-    addCourse(){
-        console.log(`A new course was added by ${this.username}`);
-    }
+    Info()
+    {
+        return `My UserName is ${this.username} . I am in ${this.standard} Standard and my RollNo is ${this.rollno}`
+    }    
 }
 
-const chai = new Teacher("chai", "chai@teacher.com", "123")
+const obj1 = new Student('David','9','17');
 
-chai.logMe()
-const masalaChai = new User("masalaChai")
+console.log(obj1.Info());
+console.log(obj1.LogMe());
 
-masalaChai.logMe()
 
-console.log(chai instanceof User);
